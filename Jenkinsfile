@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Ramakrishnaragi/Task-2-Simple-Jenkins-Pipeline-for-CI-CD.git'
+                git branch: 'main', url: 'https://github.com/Ramakrishnaragi/Task-2-Simple-Jenkins-Pipeline-for-CI-CD.git'
             }
         }
 
