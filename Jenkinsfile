@@ -46,7 +46,7 @@ pipeline {
                     docker stop $APP_NAME || true
                     docker rm $APP_NAME || true
                     docker pull $DOCKER_IMAGE
-                    docker run -d --name $APP_NAME -p 3000:3000 $DOCKER_IMAGE
+                    docker run -d --name $APP_NAME -p 3001:3000 $DOCKER_IMAGE
                 '''
             }
         }
