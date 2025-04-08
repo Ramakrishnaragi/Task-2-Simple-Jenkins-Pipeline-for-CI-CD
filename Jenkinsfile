@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         APP_NAME = "nodejs-demo-app"
-        DOCKER_IMAGE = "nodejs-demo-app:latest"
+        DOCKER_IMAGE = "ramakrishnaragi/nodejs-demo-app:latest"
     }
 
     stages {
@@ -25,11 +25,27 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Push to DockerHub') {
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerhub-creds', 
+                    usernameVariable: 'USERNAME', 
+                    passwordVariable: 'PASSWORD'
+                )]) {
+                    sh '''
+                        echo "$PASSWORD" | docker login -u "$USERNAME" --password-stdin
+                        docker push $DOCKER_IMAGE
+                    '''
+                }
+            }
+        }
+
+        stage('Deploy to EC2') {
             steps {
                 sh '''
                     docker stop $APP_NAME || true
                     docker rm $APP_NAME || true
+                    docker pull $DOCKER_IMAGE
                     docker run -d --name $APP_NAME -p 3000:3000 $DOCKER_IMAGE
                 '''
             }
