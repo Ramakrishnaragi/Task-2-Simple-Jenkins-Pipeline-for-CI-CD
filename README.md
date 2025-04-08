@@ -124,6 +124,8 @@ Steps 5: Test It
 2. Jenkins should pull code, build image, push to DockerHub, and deploy.  
 3. Go to ec2 server check container ------docker ps
 
+   ![Image](https://github.com/user-attachments/assets/e60756bc-b980-4669-b640-06b205ad6ccd)
+
 Tips: 
 → Use Secrets in Jenkins instead of hardcoding passwords. 
 → Always add logging to your stages for easier debugging. 
