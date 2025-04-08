@@ -126,6 +126,8 @@ Steps 5: Test It
 
    ![Image](https://github.com/user-attachments/assets/e60756bc-b980-4669-b640-06b205ad6ccd)
 
+   ![Image](https://github.com/user-attachments/assets/a381f909-392a-42f0-a51e-fe478f89be7d)
+
 Tips: 
 → Use Secrets in Jenkins instead of hardcoding passwords. 
 → Always add logging to your stages for easier debugging. 
