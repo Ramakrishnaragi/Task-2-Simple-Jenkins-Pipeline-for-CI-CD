@@ -1,4 +1,4 @@
-                                    Task-2-Simple-Jenkins-Pipeline-for-CI-CD
+                                    **Task-2-Simple-Jenkins-Pipeline-for-CI-CD**
 
 Objective:  
 Set up a basic Jenkins pipeline to automate the process of building and deploying an application. 
@@ -34,10 +34,10 @@ Set up a basic Jenkins pipeline to automate the process of building and deployin
 • sudo systemctl enable docker 
 • sudo docker --version 
    Steps 2: 
- # Create a new repo in GitHub and the clone the repo 
- # connect to ec2 server and clone the repo  
- # Create a sample code of nodejs like --> app.js, package.js 
- #Create a Dockerfile and Jenkinsfile 
+     # Create a new repo in GitHub and the clone the repo 
+     # connect to ec2 server and clone the repo  
+     # Create a sample code of nodejs like --> app.js, package.js 
+     # Create a Dockerfile and Jenkinsfile 
 Jenkinsfile: 
 pipeline { 
 agent any 
