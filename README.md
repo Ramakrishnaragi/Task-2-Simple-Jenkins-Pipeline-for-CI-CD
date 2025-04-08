@@ -1,5 +1,3 @@
-                                    **Task-2-Simple-Jenkins-Pipeline-for-CI-CD**
-
 Objective:  
 Set up a basic Jenkins pipeline to automate the process of building and deploying an application. 
  Tools Used: 
@@ -21,11 +19,15 @@ Set up a basic Jenkins pipeline to automate the process of building and deployin
 • sudo systemctl enable jenkins 
 • sudo systemctl start jenkins 
 ➢ Access Jenkins on http://<EC2-Public-IP>:8080 
+
+
 4. Install Jenkins Plugins: 
 • Docker Pipeline 
 • GitHub Integration 
 • Stage view 
 • SSH Agent(optional) 
+
+
 5. Install Docker for this cmds: 
 • sudo yum install docker -y 
 • sudo usermod -aG docker ec2-user 
@@ -33,11 +35,19 @@ Set up a basic Jenkins pipeline to automate the process of building and deployin
 • sudo service docker start 
 • sudo systemctl enable docker 
 • sudo docker --version 
-   Steps 2: 
-      Create a new repo in GitHub and the clone the repo 
-      connect to ec2 server and clone the repo  
-      Create a sample code of nodejs like --> app.js, package.js 
-      Create a Dockerfile and Jenkinsfile 
+
+
+
+
+Steps 2: 
+  Create a new repo in GitHub and the clone the repo 
+  connect to ec2 server and clone the repo  
+  Create a sample code of nodejs like --> app.js, package.js 
+ Create a Dockerfile and Jenkinsfile 
+
+
+
+
 Jenkinsfile: 
 pipeline { 
 agent any 
@@ -87,11 +97,14 @@ docker run -d --name $APP_NAME -p 3001:3000 $DOCKER_IMAGE
 } 
 } 
 } 
-Step 3:  
-Step 4: 
+
+
+Step 3:   
  push the nodejs app and Dockerfile and Jenkinsfile to your git repo 
  Go to your Github repo ---> setting -->webhooks 
  Content type: application/json 
+ 
+ Step 4:
  Payload URL: http://<ec2-ip>:8080/github-webhook/ 
  Go to Jenkins Dashboard → Manage Jenkins → Credentials → Global. 
  Click Add Credentials: 
@@ -103,7 +116,15 @@ Step 4:
 > ID: e.g., dockerhub-creds(docker) or github-creds(git)   
 > Use this ID in your Jenkinsfile. 
  Click "OK" or "Save" 
+
+
+
 Steps 5: Test It 
 1.  Push changes to GitHub repo. 
 2. Jenkins should pull code, build image, push to DockerHub, and deploy.  
-3. Go to ec2 server check container ------docker ps 
+3. Go to ec2 server check container ------docker ps
+
+Tips: 
+→ Use Secrets in Jenkins instead of hardcoding passwords. 
+→ Always add logging to your stages for easier debugging. 
+→ Use tags for Docker images for version control.
