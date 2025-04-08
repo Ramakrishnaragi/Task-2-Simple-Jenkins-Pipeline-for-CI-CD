@@ -34,10 +34,10 @@ Set up a basic Jenkins pipeline to automate the process of building and deployin
 • sudo systemctl enable docker 
 • sudo docker --version 
    Steps 2: 
-     # Create a new repo in GitHub and the clone the repo 
-     # connect to ec2 server and clone the repo  
-     # Create a sample code of nodejs like --> app.js, package.js 
-     # Create a Dockerfile and Jenkinsfile 
+      Create a new repo in GitHub and the clone the repo 
+      connect to ec2 server and clone the repo  
+      Create a sample code of nodejs like --> app.js, package.js 
+      Create a Dockerfile and Jenkinsfile 
 Jenkinsfile: 
 pipeline { 
 agent any 
@@ -89,12 +89,12 @@ docker run -d --name $APP_NAME -p 3001:3000 $DOCKER_IMAGE
 } 
 Step 3:  
 Step 4: 
-# push the nodejs app and Dockerfile and Jenkinsfile to your git repo 
-# Go to your Github repo ---> setting -->webhooks 
-# Content type: application/json 
-# Payload URL: http://<ec2-ip>:8080/github-webhook/ 
-# Go to Jenkins Dashboard → Manage Jenkins → Credentials → Global. 
-# Click Add Credentials: 
+ push the nodejs app and Dockerfile and Jenkinsfile to your git repo 
+ Go to your Github repo ---> setting -->webhooks 
+ Content type: application/json 
+ Payload URL: http://<ec2-ip>:8080/github-webhook/ 
+ Go to Jenkins Dashboard → Manage Jenkins → Credentials → Global. 
+ Click Add Credentials: 
 > Kind: Username & Password 
 > Username: Your GitHub/DockerHub username 
 > Password: 
@@ -102,7 +102,7 @@ Step 4:
 2. For DockerHub → use your DockerHub password (or token) 
 > ID: e.g., dockerhub-creds(docker) or github-creds(git)   
 > Use this ID in your Jenkinsfile. 
-# Click "OK" or "Save" 
+ Click "OK" or "Save" 
 Steps 5: Test It 
 1.  Push changes to GitHub repo. 
 2. Jenkins should pull code, build image, push to DockerHub, and deploy.  
