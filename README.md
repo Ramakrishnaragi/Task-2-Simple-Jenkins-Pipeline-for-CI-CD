@@ -2,12 +2,13 @@
 ---               
 # Objective:  
 Set up a basic Jenkins pipeline to automate the process of building and deploying an application. 
- # Tools Used: 
+ # Tools Used:
+ ```
   Jenkins: Automation server for CI/CD 
   Docker: For containerizing the app 
   AWS EC2: Server to host Jenkins and run your app 
   GitHub: Source code repository 
- 
+ ```
  # Steps 1: 
 1. Launch ec2 instance(linux or ubuntu) 
 2. Enable security groups 
