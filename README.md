@@ -113,6 +113,7 @@ docker run -d --name $APP_NAME -p 3001:3000 $DOCKER_IMAGE
 - Content type: application/json 
  
  # Step 4:
+ ```
  - Payload URL: http://<ec2-ip>:8080/github-webhook/ 
  - Go to Jenkins Dashboard → Manage Jenkins → Credentials → Global. 
  - Click Add Credentials: 
@@ -125,7 +126,7 @@ docker run -d --name $APP_NAME -p 3001:3000 $DOCKER_IMAGE
                - Use this ID in your Jenkinsfile. 
                - Click "OK" or "Save" 
 
-
+```
 
 # Steps 5: Test It 
      - Push changes to GitHub repo. 
