@@ -26,6 +26,17 @@ Set up a basic Jenkins pipeline to automate the process of building and deployin
 ➢ Access Jenkins on http://<EC2-Public-IP>:8080 
 
 
+# If jenkins Build Executor Status shows offline means, follow this method:
+- Go to Jenkins Dashboard.
+- Look on the left sidebar for:
+     - Build Executor Status
+     - go to manage jenkins ---> manage nodes and clouds ----> Built-In Node ---> configure ----> Node Properties----> select Disk Space Monitoring Thresholds
+
+![image](https://github.com/user-attachments/assets/ced9aa47-7dc2-4e4b-b38b-265ca9fa73d9)
+
+
+
+
 4. Install Jenkins Plugins:
 ``` 
 • Docker Pipeline 
