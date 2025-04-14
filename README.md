@@ -1,4 +1,4 @@
-                TASK-2 Simple Jenkins Pipeline for CI/CD
+#   TASK-2 Simple Jenkins Pipeline for CI/CD
 ---               
 # Objective:  
 Set up a basic Jenkins pipeline to automate the process of building and deploying an application. 
